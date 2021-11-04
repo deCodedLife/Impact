@@ -27,16 +27,10 @@ Item
             name: modelData["name"]
             characterImage: modelData["image"]
 
-            minAttackAnimation: modelData["minAttackAnimation"]
-            minHoldAttachAnimation: modelData["minHoldAttackAnimation"]
-
-            useTwoHandSword: modelData["useTwoHandSword"]
-            jumpCancel: modelData["jumpCancel"]
-            shiftCancel: modelData["shiftCancel"]
-
             isEmpty: false
             onClicked:
             {
+                console.log(characterID, root.parent.selectedIndex)
                 root.core.addCharacter(characterID, root.parent.selectedIndex)
                 root.parent.source = "MainPage.qml"
             }

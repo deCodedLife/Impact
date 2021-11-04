@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QDebug>
 #include <QObject>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -17,6 +18,9 @@ public:
     bool useTwoHandSword;
     bool jumpCancel;
     bool shiftCancel;
+
+    int firstSkillCooldown;
+    int ultimateCooldown;
 
     QJsonObject toJson();
     static Character fromJson(QJsonObject);

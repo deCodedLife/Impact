@@ -13,13 +13,6 @@ Item
     property string name: ""
     property string characterImage: ""
 
-    property int minAttackAnimation: 0
-    property int minHoldAttachAnimation: 0
-
-    property bool useTwoHandSword: false
-    property bool jumpCancel: false
-    property bool shiftCancel: false
-
     signal clicked()
 
     Rectangle

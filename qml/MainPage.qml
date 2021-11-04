@@ -83,7 +83,7 @@ Item
 
                     Switch
                     {
-                        text: "Show recharge time"
+                        text: "Show cooldown"
                         checked: false
 
                         font.bold: true
@@ -93,12 +93,19 @@ Item
                         {
                             textColor: presets.textColor
                         }
+
+                        onCheckedChanged:
+                        {
+                            root.parent.rootWindow.cooldownActivated = checked
+                        }
                     }
                 }
             }
 
             ListView
             {
+                interactive: false
+
                 width: 64
                 Layout.fillHeight: true
 
@@ -116,13 +123,6 @@ Item
                     characterID: modelData["id"]
                     name: modelData["name"]
                     characterImage: modelData["image"]
-
-                    minAttackAnimation: modelData["minAttackAnimation"]
-                    minHoldAttachAnimation: modelData["minHoldAttackAnimation"]
-
-                    useTwoHandSword: modelData["useTwoHandSword"]
-                    jumpCancel: modelData["jumpCancel"]
-                    shiftCancel: modelData["shiftCancel"]
 
                     isEmpty: false
 

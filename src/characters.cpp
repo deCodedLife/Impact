@@ -2,6 +2,10 @@
 
 Characters::Characters(QObject *parent) : QObject(parent)
 {
+    for ( int i = 0; i < 4; i++ )
+    {
+        active.append(-1);
+    }
 }
 
 int Characters::getCurrentID()
@@ -67,7 +71,7 @@ QJsonArray Characters::getActive()
 
     for ( Character hero : heroes )
     {
-        for ( int i = 0; i < 4; i++ )
+        for ( int i = 0; i < active.length(); i++ )
         {
             if ( hero.id == active[i] )
             {
@@ -89,6 +93,8 @@ Character::Character()
     useTwoHandSword = false;
     jumpCancel = false;
     shiftCancel = false;
+    firstSkillCooldown = 0;
+    ultimateCooldown = 0;
 }
 
 QJsonObject Character::toJson()
@@ -103,6 +109,8 @@ QJsonObject Character::toJson()
     character["useTwoHandSword"] = useTwoHandSword;
     character["jumpCancel"] = jumpCancel;
     character["shiftCancel"] = shiftCancel;
+    character["firstSkillCooldown"] = firstSkillCooldown;
+    character["ultimateCooldown"] = ultimateCooldown;
 
     return character;
 }
@@ -119,6 +127,8 @@ Character Character::fromJson(QJsonObject data)
     newCharacter.useTwoHandSword = data["useTwoHandSword"].toBool();
     newCharacter.jumpCancel = data["jumpCancel"].toBool();
     newCharacter.shiftCancel = data["shiftCancel"].toBool();
+    newCharacter.firstSkillCooldown = data["firstSkillCooldown"].toInt();
+    newCharacter.ultimateCooldown = data["ultimateCooldown"].toInt();
 
     return newCharacter;
 }

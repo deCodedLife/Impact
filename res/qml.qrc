@@ -8,5 +8,8 @@
         <file>../qml/MainPage.qml</file>
         <file>../qml/Configs.qml</file>
         <file>../qml/CustomContent.qml</file>
+        <file>../qml/FloatingButton.qml</file>
+        <file>../qml/FloatingCooldown.qml</file>
+        <file>../qml/CharacterCooldown.qml</file>
     </qresource>
 </RCC>

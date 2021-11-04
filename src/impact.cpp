@@ -16,12 +16,14 @@ Impact::Impact(QObject *parent) : QObject(parent)
         heroes.Add( newCharacter );
     }
 
-    timer.SetTime(100);
+    timer.Start();
+    timer.SetTime(150);
     timer.Configure(timerThread);
     timer.moveToThread(&timerThread);
     timerThread.start();
 
     countDown = new Timer(2000);
+    countDown->Start();
     countDown->Configure(countDownThread);
     countDown->moveToThread(&countDownThread);
     countDownThread.start();
@@ -108,6 +110,8 @@ void Impact::KeyListener(int key)
     {
         ToggleState();
     }
+
+     qDebug() << "Got something";
 
     // TODO: Rewrite properly
 

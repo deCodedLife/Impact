@@ -33,6 +33,9 @@ QJsonArray Database::getCharacters()
         hero["jumpCancel"] = query.value(6).toInt() == 0 ? false : true;
         hero["shiftCancel"] = query.value(7).toInt() == 0 ? false : true;
 
+        hero["firstSkillCooldown"] = query.value(8).toInt();
+        hero["ultimateCooldown"] = query.value(9).toInt();
+
         heroes.append(hero);
     }
 

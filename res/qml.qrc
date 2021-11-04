@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../qml/main.qml</file>
+        <file>../qml/Presets.qml</file>
+        <file>../qtquickcontrols2.conf</file>
+        <file>../qml/Character.qml</file>
+        <file>../qml/ListPage.qml</file>
+        <file>../qml/MainPage.qml</file>
+        <file>../qml/Configs.qml</file>
+        <file>../qml/CustomContent.qml</file>
+    </qresource>
+</RCC>

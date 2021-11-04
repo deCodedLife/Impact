@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/done_icon.svg</file>
+        <file>images/background.jpg</file>
+        <file>images/Diluc.png</file>
+        <file>images/Klee.png</file>
+        <file>icons/add_icon.svg</file>
+    </qresource>
+</RCC>
